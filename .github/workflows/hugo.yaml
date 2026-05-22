@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+# This forces the GitHub runner to run all actions on Node 24 immediately
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 permissions:
   contents: read
   pages: write
