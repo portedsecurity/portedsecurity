@@ -30,6 +30,7 @@ fn main() {
     x = 6; // This will cause an error!
     println!("The value of x is now: {}", x);
 }
+```
 
 If you run cargo run, the Microsoft C++ build tools (which Rust relies on in Windows) will stop and throw a massive error reading: cannot assign twice to immutable variable x.
 
@@ -38,6 +39,7 @@ Rust does this for safety. If part of your code assumes a value will never chang
 Making Variables Mutable
 If you actually want to change a variable's value, you have to explicitly ask for permission using the mut keyword:
 
+```rust
 fn main() {
     let mut x = 5;
     println!("The value of x is: {}", x);
@@ -45,7 +47,7 @@ fn main() {
     x = 6; // This works perfectly now!
     println!("The value of x is now: {}", x);
 }
-
+```
 By typing mut, you are signaling to other programmers (and the compiler) that this value will change during the program's lifecycle.
 
 Shadowing: A Rust Superpower
@@ -53,13 +55,14 @@ What if you want to perform a transformation on a variable, but you want it to r
 
 You can declare a new variable with the same name as a previous variable using the let keyword again:
 
+```rust
 fn main() {
     let spaces = "   "; // This is a string of spaces
     let spaces = spaces.len(); // We shadow it to become an integer (3)
     
     println!("There are {} spaces.", spaces);
 }
-
+```
 Shadowing is completely different from making a variable mut. With shadowing, we are actually creating a brand new variable, which means we can even change the type of the data (from text to a number), which mut does not allow.
 
 Basic Data Types
@@ -90,8 +93,9 @@ let is_crashing: bool = false;
 4. Characters
 Rust's char type is four bytes in size and represents a Unicode Scalar Value. This means it can represent a lot more than just ASCII—it can handle accented letters, Chinese/Japanese/Korean characters, and even emojis.
 
+```rust
 let letter: char = 'A';
 let rust_crab: char = '🦀';
-
+```
 Summary
 You now know how to store data safely in Rust. You understand that variables are locked (immutable) by default to prevent bugs, how to unlock them with mut, and how to
