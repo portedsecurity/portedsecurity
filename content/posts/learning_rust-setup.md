@@ -2,21 +2,20 @@
 title = "Learnig Rust, setting up your development Enviroment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
-description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
-categories = ["Development", "Tutorials", "Learning Rust"]
+description = "A step-by-step beginner's guide to installing Rust, MSVC build tools, VS Code, and Git on a brand new Windows 11 PC for application development."
 tags = ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment"]
 categories = ["Development", "Tutorials"]
 author = "Gregory Bryant"
 # SEO Specific Metadata
-meta_title = "How to Install Rust on Windows"
+meta_title = "How to Install Rust on Windows: Complete Fresh Setup Guide"
 focus_keyword = "install rust on windows"
 +++
 
-To get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
+Starting with a brand new PC is the perfect opportunity to build a clean, bloat-free development environment. If you are looking to get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
 
 Because Rust interacts closely with the Windows operating system, it relies on Microsoft's C++ build tools behind the scenes. 
 
-Checklist to install Rust on a Windows machine.
+Here is the ultimate, step-by-step checklist to install Rust on a fresh Windows machine from scratch.
 
 <!--more-->
 
@@ -36,7 +35,7 @@ To write, compile, and manage Rust applications on Windows, we need to install f
 Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolchain. You do not need to install the massive, full Visual Studio IDE; you only need the command-line build tools.
 
 1. Head to the official [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/) page.
-2. Scroll down to *All Downloads*, expand *Tools for Visual Studio*, and download the **Build Tools for Visual Studio 2026**.
+2. Scroll down to *All Downloads*, expand *Tools for Visual Studio*, and download the **Build Tools for Visual Studio 2022**.
 3. Run the installer. In the workloads screen, check the box for **Desktop development with C++**.
 4. On the right-hand sidebar, ensure the following components are selected:
    * **MSVC v143** - VS 2022 C++ x64/x86 build tools (or latest)
