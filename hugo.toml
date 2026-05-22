@@ -1,5 +1,5 @@
 baseURL = 'https://portedsecurity.github.io/'
-languageCode = 'en-us'
+locale = 'en-us'
 title = 'Ported Security'
 theme = 'PaperMod'
 
