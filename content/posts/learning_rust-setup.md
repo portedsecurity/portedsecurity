@@ -5,7 +5,7 @@ draft = false
 description = "A step-by-step beginner's guide to installing Rust, MSVC build tools, VS Code, and Git on a brand new Windows 11 PC for application development."
 tags = ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment"]
 categories = ["Development", "Tutorials"]
-author = "Your Name"
+author = "Gregory Bryant"
 # SEO Specific Metadata
 meta_title = "How to Install Rust on Windows: Complete Fresh Setup Guide"
 focus_keyword = "install rust on windows"

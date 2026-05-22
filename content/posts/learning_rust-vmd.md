@@ -5,7 +5,7 @@ draft = false
 description = "Dive into the core of Rust programming on Windows. Learn how Rust handles variables, strict mutability, and basic data types safely."
 tags = ["rust", "variables", "data-types", "programming", "windows"]
 categories = ["Development", "Tutorials"]
-author = "Your Name"
+author = "Gregory Bryant"
 meta_title = "Rust Variables and Data Types: A Beginner's Guide"
 focus_keyword = "rust variables"
 +++
