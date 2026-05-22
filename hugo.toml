@@ -5,7 +5,7 @@ theme = 'PaperMod'
 
 # GLOBAL CONFIG PARAMETERS (Must stay right beneath the site info)
 [params]
-    hideCredits = true
+    hhideCopyright = true
 
     # This configures the home page profile layout
     [params.homeInfoParams]
