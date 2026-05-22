@@ -3,26 +3,25 @@ languageCode = 'en-us'
 title = 'Ported Security'
 theme = 'PaperMod'
 
+# This adds a clean navigation menu to the top right of your landing page
+[[menu.main]]
+    name = "All Posts"
+    url = "/posts/"
+    weight = 10
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+
 [params]
     hideCredits = true
-    
+
     # This handles the main landing page block
     [params.homeInfoParams]
         Title = "Ported Security"
-        Content = "Welcome to Ported Security. Free place to learn everything from coding, to certifications"
+        Content = "Welcome to Ported Security. Time to learn!."
 
     # This adds professional social icons right under your landing page text
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/portedsecurity"
-
-# Keep arrays like menus at the bottom to avoid parsing issues
-[[menu.main]]
-    name = "All Posts"
-    url = "/posts/"
-    weight = 10
-
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 20
