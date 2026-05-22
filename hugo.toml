@@ -3,11 +3,25 @@ languageCode = 'en-us'
 title = 'Ported Security'
 theme = 'PaperMod'
 
+# This adds a clean navigation menu to the top right of your landing page
+[[menu.main]]
+    name = "All Posts"
+    url = "/posts/"
+    weight = 10
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20
+
 [params]
-    # This hides the "Powered by Hugo & PaperMod" footer credits
     hideCredits = true
 
-    # This configures the home page text layout
+    # This handles the main landing page block
     [params.homeInfoParams]
         Title = "Ported Security"
-        Content = "Welcome to my tech blog. Articles, insights, and guides on cybersecurity and infrastructure."
+        Content = "Welcome to Ported Security. Free place to learn everything from coding, to certifications"
+
+    # This adds professional social icons right under your landing page text
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/portedsecurity"
