@@ -2,20 +2,20 @@
 title = "Learnig Rust, setting up your development Enviroment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
-description = "A step-by-step beginner's guide to installing Rust, MSVC build tools, VS Code, and Git on a brand new Windows 11 PC for application development."
+description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
 tags = ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment"]
 categories = ["Development", "Tutorials"]
 author = "Gregory Bryant"
 # SEO Specific Metadata
-meta_title = "How to Install Rust on Windows: Complete Fresh Setup Guide"
+meta_title = "How to Install Rust on Windows."
 focus_keyword = "install rust on windows"
 +++
 
-Starting with a brand new PC is the perfect opportunity to build a clean, bloat-free development environment. If you are looking to get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
+To get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
 
 Because Rust interacts closely with the Windows operating system, it relies on Microsoft's C++ build tools behind the scenes. 
 
-Here is the ultimate, step-by-step checklist to install Rust on a fresh Windows machine from scratch.
+Here is the checklist to install Rust on a Windows machine.
 
 <!--more-->
 
