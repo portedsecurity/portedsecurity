@@ -1,5 +1,5 @@
 +++
-title = "Learnig Rust, setting up your development Enviroment"
+title = "Learning Rust, setting up your development Enviroment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
 description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
