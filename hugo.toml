@@ -1,4 +1,13 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
-theme = "PaperMod"
+baseURL = 'https://portedsecurity.github.io/'
+languageCode = 'en-us'
+title = 'Ported Security'
+theme = 'PaperMod'
+
+[params]
+    # This hides the "Powered by Hugo & PaperMod" footer credits
+    hideCredits = true
+
+    # This configures the home page text layout
+    [params.homeInfoParams]
+        Title = "Ported Security"
+        Content = "Welcome to my tech blog. Articles, insights, and guides on cybersecurity and infrastructure."
