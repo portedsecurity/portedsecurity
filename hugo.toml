@@ -18,6 +18,10 @@ theme = 'PaperMod'
     url = "/posts/"
     weight = 10
 [[menu.main]]
+    name = "Learning Rust"
+    url = "/posts/learningrust/"
+    weight = 20
+[[menu.main]]
     name = "About"
     url = "/about/"
     weight = 20
@@ -25,4 +29,4 @@ theme = 'PaperMod'
 # SOCIAL MEDIA LINKS
 [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/portedsecurity"
+    url = "https://github.com/GregoryWBryant"
