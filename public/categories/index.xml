@@ -22,5 +22,12 @@
       <guid>http://localhost:1313/categories/tutorials/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Learningrust</title>
+      <link>http://localhost:1313/categories/learningrust/</link>
+      <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
+      <guid>http://localhost:1313/categories/learningrust/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

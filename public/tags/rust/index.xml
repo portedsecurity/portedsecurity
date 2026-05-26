@@ -10,16 +10,16 @@
     <atom:link href="http://localhost:1313/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Variables, Mutability, and Data Types in Rust</title>
-      <link>http://localhost:1313/learningrust/learning_rust-vmd/</link>
+      <link>http://localhost:1313/posts/learningrust/learning_rust-vmd/</link>
       <pubDate>Thu, 21 May 2026 21:00:00 -0400</pubDate>
-      <guid>http://localhost:1313/learningrust/learning_rust-vmd/</guid>
+      <guid>http://localhost:1313/posts/learningrust/learning_rust-vmd/</guid>
       <description>Dive into the core of Rust programming on Windows. Learn how Rust handles variables, strict mutability, and basic data types safely.</description>
     </item>
     <item>
       <title>Learning Rust, setting up your development Enviroment</title>
-      <link>http://localhost:1313/learningrust/learning_rust-setup/</link>
+      <link>http://localhost:1313/posts/learningrust/learning_rust-setup/</link>
       <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
-      <guid>http://localhost:1313/learningrust/learning_rust-setup/</guid>
+      <guid>http://localhost:1313/posts/learningrust/learning_rust-setup/</guid>
       <description>Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows.</description>
     </item>
   </channel>

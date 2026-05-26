@@ -18,10 +18,6 @@ theme = 'PaperMod'
     url = "/posts/"
     weight = 10
 [[menu.main]]
-    name = "Learning Rust"
-    url = "/posts/learningrust/"
-    weight = 20
-[[menu.main]]
     name = "About"
     url = "/about/"
     weight = 20
