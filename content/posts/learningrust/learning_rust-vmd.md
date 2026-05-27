@@ -1,7 +1,7 @@
 +++
 title = "Understanding Variables, Mutability, and Data Types in Rust"
 date = 2026-05-21T21:00:00-04:00
-draft = false
+draft = true
 description = "Dive into the core of Rust programming on Windows. Learn how Rust handles variables, strict mutability, and basic data types safely."
 tags = ["rust", "variables", "data-types", "programming", "windows"]
 categories = ["Development", "Tutorials"]
