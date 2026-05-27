@@ -12,16 +12,39 @@ theme = 'PaperMod'
         Title = "Ported Security"
         Content = "Welcome to Ported Security. Time to learn!"
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
 # TOP RIGHT NAVIGATION MENU
 [[menu.main]]
     name = "All Posts"
     url = "/posts/"
     weight = 10
+
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "series"
+  name = "Series"
+  url = "/series/"
+  weight = 30
 [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 20
-
+    
 # SOCIAL MEDIA LINKS
 [[params.socialIcons]]
     name = "github"
