@@ -1,13 +1,12 @@
 +++
-title = "Step 1: Learning Rust, setting up your development enviroment"
+title = "Learning Rust, setting up your development enviroment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
 description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
-tags = ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment"]
-categories = ["Development", "Tutorials"]
+tags = ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment", "software development"]
+categories = ["Development", "Tutorials", "Rust", "Programming"]
 series = ["Learning Rust"]
 author = "Gregory Bryant"
-# SEO Specific Metadata
 meta_title = "How to Install Rust on Windows."
 focus_keyword = "install rust on windows"
 +++
@@ -87,4 +86,14 @@ With everything installed, let's verify that your system paths are updated and t
 rustc --version
 ```
 
-Now with everything working we are redy to move on to [Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+## Learning Rust
+
+Continue your journey with the next step or visit a previous post you may have missed
+
+[Setting up your development enviroment]({{< relref "learning_rust-setup.md" >}})
+
+[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+
+[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+
+---

@@ -6,10 +6,24 @@
     <description>Recent content in Development on Ported Security</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 19:17:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 18:00:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Learning Rust, setting up your development Enviroment</title>
+      <title>Rust Variables and Immutability</title>
+      <link>http://localhost:1313/posts/learningrust/learning_rust-vars/</link>
+      <pubDate>Wed, 03 Jun 2026 18:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/posts/learningrust/learning_rust-vars/</guid>
+      <description>Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming.</description>
+    </item>
+    <item>
+      <title>Cargo and the Anatomy of &#34;Hello, World&#34;</title>
+      <link>http://localhost:1313/posts/learningrust/learning_rust-cargo/</link>
+      <pubDate>Tue, 02 Jun 2026 19:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/posts/learningrust/learning_rust-cargo/</guid>
+      <description>Dive into your first Rust program and Cargo file</description>
+    </item>
+    <item>
+      <title>Learning Rust, setting up your development enviroment</title>
       <link>http://localhost:1313/posts/learningrust/learning_rust-setup/</link>
       <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
       <guid>http://localhost:1313/posts/learningrust/learning_rust-setup/</guid>

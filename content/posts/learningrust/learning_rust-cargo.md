@@ -1,13 +1,13 @@
 +++
-title = 'Step 2: Cargo and the Anatomy of "Hello, World"'
+title = 'Cargo and the Anatomy of "Hello, World"'
 date = 2026-06-02T19:00:00-04:00
 draft = false
 description = "Dive into your first Rust program and Cargo file"
-tags = ["rust", "cargo", "hello world"]
-categories = ["Development", "Tutorials"]
+tags = ["rust", "cargo", "hello world", "programming", "software development"]
+categories = ["Development", "Tutorials", "Rust", "Programming"]
 series = ["Learning Rust"]
 author = "Gregory Bryant"
-meta_title = 'Step 1: Cargo and the Anatomy of "Hello, World"'
+meta_title = 'Cargo and the Anatomy of "Hello, World"'
 focus_keyword = "rust cargo"
 +++
 
@@ -102,3 +102,15 @@ Hello, world!
 What just happened? Cargo compiled your main.rs file, created an executable file hidden away in a newly generated target/debug/ folder, and immediately ran it.
 
 You have officially compiled and executed your first Rust program. You now have a working toolchain, a grasp of how Cargo structures a project, and the foundation to start writing real logic.
+
+## Learning Rust
+
+Continue your journey with the next step or visit a previous post you may have missed
+
+[Setting up your development enviroment]({{< relref "learning_rust-setup.md" >}})
+
+[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+
+[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+
+---

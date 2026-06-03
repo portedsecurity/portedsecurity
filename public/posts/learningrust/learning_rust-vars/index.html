@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Rust Variables and Immutability | Ported Security</title>
+<meta name="keywords" content="Rust, variables, immutability, programming, software development">
+<meta name="description" content="Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming.">
+<meta name="author" content="Gregory Bryant">
+<link rel="canonical" href="http://localhost:1313/posts/learningrust/learning_rust-vars/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/learningrust/learning_rust-vars/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Ported Security (Alt + H)">Ported Security</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="All Posts">
+                    <span>All Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/series/" title="Series">
+                    <span>Series</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Rust Variables and Immutability
+    </h1>
+    <div class="post-description">
+      Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming.
+    </div>
+    <div class="post-meta">
+
+<span title='2026-06-03 18:00:00 -0400 EDT'>June 3, 2026</span>&nbsp;·&nbsp;<span>Gregory Bryant</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h2 id="rust-variables-and-the-immutability-default-why-safe-code-matters">Rust Variables and the Immutability Default: Why Safe Code Matters<a hidden class="anchor" aria-hidden="true" href="#rust-variables-and-the-immutability-default-why-safe-code-matters">#</a></h2>
+<p>If you are coming to Rust from languages like Python, JavaScript, or C++, you are used to variables acting exactly as their name implies: they vary. You declare a variable, assign it a value, and change that value whenever the program&rsquo;s logic dictates.</p>
+<p>Rust takes a different, highly intentional approach. In Rust, variables are immutable by default. Once a value is bound to a name, you cannot change it.</p>
+<p>This might feel restrictive at first, but it is one of the foundational design choices that allows Rust to guarantee memory safety and thread safety without sacrificing speed. Let&rsquo;s explore how variables work in Rust, why immutability is the default, and how to safely bypass it when you need to.</p>
+<hr>
+<h3 id="initializing-the-project">Initializing the Project<a hidden class="anchor" aria-hidden="true" href="#initializing-the-project">#</a></h3>
+<p>Open up VS Code, open your Rust Projects folder, and open a new terminal. In the terminal type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo new variables
+</span></span></code></pre></div><p>This will create a new folder to use for testing out how variables and immuntailty work.</p>
+<p>Navigate into your newly created directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd variables
+</span></span></code></pre></div><p>Open the src/main.rs file. This is where we will write all the code for this tutorial.</p>
+<hr>
+<h2 id="the-default-state-locked-down">The Default State: Locked Down<a hidden class="anchor" aria-hidden="true" href="#the-default-state-locked-down">#</a></h2>
+<p>Let&rsquo;s test Rust&rsquo;s default behavior. Replace the generated &ldquo;Hello, world!&rdquo; code in your src/main.rs file with the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> base_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;The base damage is: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, base_damage);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now, try to compile and execute the program by running this command in your terminal:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo run
+</span></span></code></pre></div><p>This compiles and runs perfectly. But what happens if we try to modify base_damage further down in the code?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> base_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;The base damage is: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, base_damage);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Attempting to update the value
+</span></span></span><span style="display:flex;"><span>    base_damage <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>; 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;The modified damage is: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, base_damage);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you run cargo check or cargo run on this, the Rust compiler will stop you in your tracks with a highly descriptive error[E0384]: cannot assign twice to immutable variable.</p>
+<hr>
+<h2 id="why-does-rust-do-this">Why Does Rust Do This?<a hidden class="anchor" aria-hidden="true" href="#why-does-rust-do-this">#</a></h2>
+<p>Imagine you are building a complex, high-performance application—like a game engine or a remote streaming client. You have a variable tracking a user&rsquo;s unique connection ID. If a rogue function deep in your codebase accidentally modifies that ID, the application might silently drop the connection or crash entirely.</p>
+<p>By making variables immutable by default, Rust eliminates an entire category of bugs where data changes unpredictably. When you read a piece of Rust code and see a standard let binding, you have a compiler-backed guarantee that the value will never change unexpectedly</p>
+<hr>
+<h2 id="breaking-the-rules-safely-the-mut-keyword">Breaking the Rules Safely: The mut Keyword<a hidden class="anchor" aria-hidden="true" href="#breaking-the-rules-safely-the-mut-keyword">#</a></h2>
+<p>Obviously, software needs to manipulate state. A game where a player&rsquo;s health points can never drop is not much of a game. When you need a variable to change, you must explicitly tell the compiler by adding the mut (mutable) keyword.</p>
+<p>Update your src/main.rs file to look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> current_health <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;Player health: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, current_health);
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// The player takes damage
+</span></span></span><span style="display:flex;"><span>    current_health <span style="color:#f92672">=</span> <span style="color:#ae81ff">850</span>; 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;Player took damage! Health is now: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, current_health);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Run the code again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo run
+</span></span></code></pre></div><p>The Output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Player health: 1000
+</span></span><span style="display:flex;"><span>Player took damage! Health is now: 850
+</span></span></code></pre></div><p>By requiring mut, Rust forces you to communicate your intent. It acts as a clear signpost to anyone reading the code (including future you) that this specific piece of data is expected to change over time.</p>
+<hr>
+<h2 id="constants-vs-immutable-variables">Constants vs. Immutable Variables<a hidden class="anchor" aria-hidden="true" href="#constants-vs-immutable-variables">#</a></h2>
+<p>You might be wondering: If an immutable variable can&rsquo;t be changed, isn&rsquo;t it just a constant? Not quite. While they share similarities, Rust has a separate const keyword, and the two are handled differently under the hood:</p>
+<ul>
+<li>You cannot use mut with const. Constants are not just immutable by default; they are immutable always.</li>
+<li>Type annotations are mandatory. You must explicitly state the data type (e.g., u32 for an unsigned 32-bit integer).</li>
+<li>Evaluation time. Constants can only be set to a constant expression, not the result of a value computed at runtime.</li>
+</ul>
+<p>You can define constants at the global scope, outside of your main function:</p>
+<p>Update your src/main.rs file to look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// Constants are typically written in ALL_CAPS with underscores
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">MAX_SERVER_CAPACITY</span>: <span style="color:#66d9ef">u32</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10_000</span>; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;Server capacity is locked at: </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, <span style="color:#66d9ef">MAX_SERVER_CAPACITY</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Run the code again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo run
+</span></span></code></pre></div><p>The Output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Server capacity is locked at: 10000
+</span></span></code></pre></div><p>Constants are useful for hardcoded values that remain static throughout the entire lifecycle of your application, like a maximum frame rate or a physics gravity multiplier.</p>
+<hr>
+<h2 id="the-art-of-shadowing">The Art of Shadowing<a hidden class="anchor" aria-hidden="true" href="#the-art-of-shadowing">#</a></h2>
+<p>Rust offers a unique feature called shadowing, which allows you to declare a new variable with the same name as a previous variable.</p>
+<p>Try running this final block of code in your main.rs file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// We shadow the first &#39;x&#39; by using &#39;let&#39; again
+</span></span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Shadowing within a nested scope
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> x <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;The value of x in the inner scope is: </span><span style="color:#e6db74">{x}</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// Prints 12
+</span></span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;The value of x is: </span><span style="color:#e6db74">{x}</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// Prints 6
+</span></span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you run cargo run, you will see that the inner scope prints 12, and the outer scope prints 6.</p>
+<hr>
+<h2 id="shadowing-vs-mutability">Shadowing vs. Mutability<a hidden class="anchor" aria-hidden="true" href="#shadowing-vs-mutability">#</a></h2>
+<p>Why use shadowing instead of just making the variable mut?</p>
+<ul>
+<li>Preserving Immutability: When you shadow a variable using let, you perform a transformation on the value, but the new variable remains immutable after the transformation is complete.</li>
+<li>Changing Types: Shadowing allows you to reuse a variable name even if the data type changes.</li>
+</ul>
+<p>For example, if you prompt a user for input, you often receive it as a String. If you need to parse that into an integer, shadowing allows you to reuse the same clean variable name instead of inventing arbitrary names like user_input_str and user_input_int.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#75715e">// Starting with a String
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> spaces <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;   &#34;</span>; 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Shadowing it to become a number (usize)
+</span></span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> spaces <span style="color:#f92672">=</span> spaces.len();
+</span></span></code></pre></div><p>If you tried to do this with mut, the compiler would throw an error because you are not allowed to mutate a variable&rsquo;s type, only its value.</p>
+<hr>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>Understanding how Rust handles data is your first step toward mastering systems programming:</p>
+<ul>
+<li>let: Immutable by default. Safe, predictable, and prevents unwanted side effects.</li>
+<li>let mut: Explicit mutability. Signals that state will change.</li>
+<li>const: Hardcoded, strictly typed values known at compile time.</li>
+<li>Shadowing (let again): Transforms a value or changes its type while keeping the same name.</li>
+</ul>
+<p>Embrace the immutability default. It might take a little extra typing upfront, but it pays massive dividends by preventing logic bugs from ever making it to production.</p>
+<h2 id="learning-rust">Learning Rust<a hidden class="anchor" aria-hidden="true" href="#learning-rust">#</a></h2>
+<p>Continue your journey with the next step or visit a previous post you may have missed</p>
+<p><a href="/posts/learningrust/learning_rust-setup/"
+  
+  >
+  Setting up your development enviroment
+</a>
+</p>
+<p><a href="/posts/learningrust/learning_rust-cargo/"
+  
+  >
+  Cargo and the Anatomy of &ldquo;Hello, World&rdquo;
+</a>
+</p>
+<p><a href="/posts/learningrust/learning_rust-vars/"
+  
+  >
+  Rust Variables and Immutability
+</a>
+</p>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/rust/">Rust</a></li>
+      <li><a href="http://localhost:1313/tags/variables/">Variables</a></li>
+      <li><a href="http://localhost:1313/tags/immutability/">Immutability</a></li>
+      <li><a href="http://localhost:1313/tags/programming/">Programming</a></li>
+      <li><a href="http://localhost:1313/tags/software-development/">Software Development</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2026 <strong>Ported Security</strong>. All Rights Reserved.</span>
+</footer></body>
+
+</html>
