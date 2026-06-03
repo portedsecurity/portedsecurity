@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Step 2: Cargo and the Anatomy of &#34;Hello, World&#34; | Ported Security</title>
+<meta name="keywords" content="rust, cargo, hello world">
+<meta name="description" content="Dive into your first Rust program and Cargo file">
+<meta name="author" content="Gregory Bryant">
+<link rel="canonical" href="http://localhost:1313/posts/learningrust/learning_rust-cargo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89ca4972ab5e6aaa05e9a0dae0c4bb64b26585bc79e36f5cf33614eea0283abe.css" integrity="sha256-icpJcqteaqoF6aDa4MS7ZLJlhbx5429c8zYU7qAoOr4=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/learningrust/learning_rust-cargo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Ported Security (Alt + H)">Ported Security</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="All Posts">
+                    <span>All Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/series/" title="Series">
+                    <span>Series</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Step 2: Cargo and the Anatomy of &#34;Hello, World&#34;
+    </h1>
+    <div class="post-description">
+      Dive into your first Rust program and Cargo file
+    </div>
+    <div class="post-meta">
+
+<span title='2026-06-02 19:00:00 -0400 EDT'>June 2, 2026</span>&nbsp;·&nbsp;<span>Gregory Bryant</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><p>Welcome to day one of writing Rust. You are stepping into a language that powers everything from massive web servers to the core utilities of operating systems.</p>
+<p>If following from our previous post, you are ready to dive right in. Otherwise, checkout <a href="/posts/learningrust/learning_rust-setup/"
+  
+  >
+  Setting up your development enviroment
+</a>
+. Let&rsquo;s start with a break down on how Rust projects are structured and get your first program off the ground.</p>
+<h2 id="meet-cargo-your-new-best-friend">Meet Cargo: Your New Best Friend<a hidden class="anchor" aria-hidden="true" href="#meet-cargo-your-new-best-friend">#</a></h2>
+<p>In some languages, compiling code, managing dependencies, and formatting your files require three or four different tools. Rust simplifies this with Cargo.</p>
+<p>Cargo is Rust’s build system and package manager. It compiles your code, downloads the libraries your code depends on (called &ldquo;crates&rdquo; in the Rust ecosystem), and builds those libraries. You will rarely use the raw Rust compiler (<code>rustc</code>) directly; Cargo handles the heavy lifting.</p>
+<h3 id="initializing-the-project">Initializing the Project<a hidden class="anchor" aria-hidden="true" href="#initializing-the-project">#</a></h3>
+<p>Open up VS Code and click on the Explore button in the left hand bar. Let&rsquo;s create a new Folder called Rust Projects, and then select it. Open up Terminal from the top menu and hit new Terminal if one is not already open.</p>
+<p>To create a new project, type the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo new hello_world
+</span></span></code></pre></div><p>Cargo just did a few things behind the scenes. It created a new directory called hello_world, set up a basic project structure, and even initialized a new Git repository automatically to track your version history.</p>
+<p>Navigate into your new project director</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd hello_world
+</span></span></code></pre></div><p>The Anatomy of a Rust Project
+If you open the hello_world folder in VS Code, you will see a clean, minimalist structure. Let&rsquo;s dissect exactly what Cargo generated for you.</p>
+<ol>
+<li>Cargo.toml
+This is your project&rsquo;s manifest file, written in the TOML (Tom&rsquo;s Obvious, Minimal Language) format. It looks like this:</li>
+</ol>
+<pre tabindex="0"><code class="language-Ini," data-lang="Ini,">[package]
+name = &#34;hello_world&#34;
+version = &#34;0.1.0&#34;
+edition = &#34;2021&#34;
+
+[dependencies]
+</code></pre><p>[package]: This section defines the metadata Cargo needs to compile your program, the name, the version, and the Rust edition to use.</p>
+<p>[dependencies]: Right now, it&rsquo;s empty. In the future, when you need to pull in external code (like a library to generate random numbers or build a web server), you will list them here. Cargo will read this file, download the exact versions you need, and link them to your project automatically.</p>
+<ol start="2">
+<li>The src Directory
+Cargo expects all your source code to live inside the src folder. The top level of your project directory is strictly for configuration files, READMEs, and licensing information.</li>
+</ol>
+<p>Inside src, you will find a single file: main.rs.</p>
+<p>Dissecting main.rs
+Open src/main.rs. You will see the most famous four lines in programming:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">println!</span>(<span style="color:#e6db74">&#34;Hello, world!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It looks simple, but there are a few uniquely &ldquo;Rust&rdquo; details hiding in here:</p>
+<p>fn main(): The fn keyword declares a function. The main function is special: it is the primary entry point of every executable Rust program. The code inside its curly braces {} is the very first thing that runs.</p>
+<p>println!: This prints text to the console, but it is not a function. The exclamation mark (!) signifies that println! is a macro. Macros in Rust are essentially code that writes other code. For now, just remember: if you see a !, you are calling a macro instead of a normal function.</p>
+<p>&ldquo;Hello, world!&rdquo;: This is a string literal, passed as an argument to println!.</p>
+<p>;: Rust is a statically typed, C-family language. Almost all statements must end with a semicolon, indicating that the expression is complete.</p>
+<ol start="3">
+<li>Compiling and Running
+You have the code. Now it is time to execute it.</li>
+</ol>
+<p>While you could use cargo build to compile the code and then manually run the executable file it creates, Cargo provides a shortcut that does both in one step.</p>
+<p>In your VS Code terminal, make sure you are inside the hello_world directory and type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo run
+</span></span></code></pre></div><p>The Output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Compiling hello_world v0.1.0 (C:\path\to\your\hello_world)
+</span></span><span style="display:flex;"><span>    Finished dev [unoptimized + debuginfo] target(s) in 1.02s
+</span></span><span style="display:flex;"><span>     Running `target\debug\hello_world.exe`
+</span></span><span style="display:flex;"><span>Hello, world!
+</span></span></code></pre></div><p>What just happened? Cargo compiled your main.rs file, created an executable file hidden away in a newly generated target/debug/ folder, and immediately ran it.</p>
+<p>You have officially compiled and executed your first Rust program. You now have a working toolchain, a grasp of how Cargo structures a project, and the foundation to start writing real logic.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/rust/">Rust</a></li>
+      <li><a href="http://localhost:1313/tags/cargo/">Cargo</a></li>
+      <li><a href="http://localhost:1313/tags/hello-world/">Hello World</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2026 <strong>Ported Security</strong>. All Rights Reserved.</span>
+</footer></body>
+
+</html>

@@ -1,5 +1,5 @@
 +++
-title = "Learning Rust, setting up your development Enviroment"
+title = "Step 1: Learning Rust, setting up your development enviroment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
 description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
@@ -31,7 +31,7 @@ To write, compile, and manage Rust applications on Windows, we need to install f
 
 ---
 
-## Step 1: Install Visual Studio Build Tools
+## Install Visual Studio Build Tools
 
 Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolchain. You do not need to install the massive, full Visual Studio IDE; you only need the command-line build tools.
 
@@ -45,7 +45,7 @@ Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolch
 
 ---
 
-## Step 2: Install Rust via Rustup
+## Install Rust via Rustup
 
 `rustup` is the official management tool for Rust. It handles your compiler (`rustc`), package manager (`cargo`), and standard libraries.
 
@@ -57,7 +57,7 @@ Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolch
 
 ---
 
-## Step 3: Configure VS Code and Rust-Analyzer
+## Configure VS Code and Rust-Analyzer
 
 While you can write Rust in any text editor, Visual Studio Code paired with the right extensions offers an unmatched developer experience.
 
@@ -69,7 +69,7 @@ While you can write Rust in any text editor, Visual Studio Code paired with the 
 
 ---
 
-## Step 4: Install Git for Windows
+## Install Git for Windows
 
 The Rust ecosystem relies heavily on Git. Cargo (Rust's package manager) uses Git under the hood to fetch libraries, packages, and dependencies directly from GitHub.
 
@@ -85,3 +85,6 @@ With everything installed, let's verify that your system paths are updated and t
 
 ```bash
 rustc --version
+```
+
+Now with everything working we are redy to move on to [Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})

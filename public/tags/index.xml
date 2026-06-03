@@ -6,41 +6,27 @@
     <description>Recent content in Tags on Ported Security</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 21:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 19:00:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Data-Types</title>
-      <link>http://localhost:1313/tags/data-types/</link>
-      <pubDate>Thu, 21 May 2026 21:00:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/data-types/</guid>
+      <title>Cargo</title>
+      <link>http://localhost:1313/tags/cargo/</link>
+      <pubDate>Tue, 02 Jun 2026 19:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/tags/cargo/</guid>
       <description></description>
     </item>
     <item>
-      <title>Programming</title>
-      <link>http://localhost:1313/tags/programming/</link>
-      <pubDate>Thu, 21 May 2026 21:00:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/programming/</guid>
+      <title>Hello World</title>
+      <link>http://localhost:1313/tags/hello-world/</link>
+      <pubDate>Tue, 02 Jun 2026 19:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/tags/hello-world/</guid>
       <description></description>
     </item>
     <item>
       <title>Rust</title>
       <link>http://localhost:1313/tags/rust/</link>
-      <pubDate>Thu, 21 May 2026 21:00:00 -0400</pubDate>
+      <pubDate>Tue, 02 Jun 2026 19:00:00 -0400</pubDate>
       <guid>http://localhost:1313/tags/rust/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Variables</title>
-      <link>http://localhost:1313/tags/variables/</link>
-      <pubDate>Thu, 21 May 2026 21:00:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/variables/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
-      <pubDate>Thu, 21 May 2026 21:00:00 -0400</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -48,6 +34,13 @@
       <link>http://localhost:1313/tags/dev-environment/</link>
       <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
       <guid>http://localhost:1313/tags/dev-environment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
@@ -62,6 +55,13 @@
       <link>http://localhost:1313/tags/vs-code/</link>
       <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
       <guid>http://localhost:1313/tags/vs-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Thu, 21 May 2026 19:17:00 -0400</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
   </channel>

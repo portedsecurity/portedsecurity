@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Learning Rust, setting up your development Enviroment | Ported Security</title>
+<title>Step 1: Learning Rust, setting up your development enviroment | Ported Security</title>
 <meta name="keywords" content="rust, windows, rustup, vs-code, programming, dev-environment">
 <meta name="description" content="Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows.">
 <meta name="author" content="Gregory Bryant">
@@ -101,8 +101,23 @@
                 </a>
             </li>
             <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
                 <a href="http://localhost:1313/about/" title="About">
                     <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/series/" title="Series">
+                    <span>Series</span>
                 </a>
             </li>
         </ul>
@@ -114,7 +129,7 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Learning Rust, setting up your development Enviroment
+      Step 1: Learning Rust, setting up your development enviroment
     </h1>
     <div class="post-description">
       Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows.
@@ -137,7 +152,7 @@
 <li><strong>Git</strong> (For version control and dependency management)</li>
 </ol>
 <hr>
-<h2 id="step-1-install-visual-studio-build-tools">Step 1: Install Visual Studio Build Tools<a hidden class="anchor" aria-hidden="true" href="#step-1-install-visual-studio-build-tools">#</a></h2>
+<h2 id="install-visual-studio-build-tools">Install Visual Studio Build Tools<a hidden class="anchor" aria-hidden="true" href="#install-visual-studio-build-tools">#</a></h2>
 <p>Rust on Windows typically defaults to the <strong>MSVC (Microsoft Visual C++)</strong> toolchain. You do not need to install the massive, full Visual Studio IDE; you only need the command-line build tools.</p>
 <ol>
 <li>Head to the official <a href="https://visualstudio.microsoft.com/downloads/"
@@ -159,7 +174,7 @@
 <li>Click <strong>Install</strong> and reboot your PC if prompted.</li>
 </ol>
 <hr>
-<h2 id="step-2-install-rust-via-rustup">Step 2: Install Rust via Rustup<a hidden class="anchor" aria-hidden="true" href="#step-2-install-rust-via-rustup">#</a></h2>
+<h2 id="install-rust-via-rustup">Install Rust via Rustup<a hidden class="anchor" aria-hidden="true" href="#install-rust-via-rustup">#</a></h2>
 <p><code>rustup</code> is the official management tool for Rust. It handles your compiler (<code>rustc</code>), package manager (<code>cargo</code>), and standard libraries.</p>
 <ol>
 <li>Go to <a href="https://rustup.rs/"
@@ -176,7 +191,7 @@
 <li>Close the terminal window once the installation completes.</li>
 </ol>
 <hr>
-<h2 id="step-3-configure-vs-code-and-rust-analyzer">Step 3: Configure VS Code and Rust-Analyzer<a hidden class="anchor" aria-hidden="true" href="#step-3-configure-vs-code-and-rust-analyzer">#</a></h2>
+<h2 id="configure-vs-code-and-rust-analyzer">Configure VS Code and Rust-Analyzer<a hidden class="anchor" aria-hidden="true" href="#configure-vs-code-and-rust-analyzer">#</a></h2>
 <p>While you can write Rust in any text editor, Visual Studio Code paired with the right extensions offers an unmatched developer experience.</p>
 <ol>
 <li>Download and install <a href="https://code.visualstudio.com/"
@@ -194,7 +209,7 @@
 <p><strong>Note:</strong> Do not install the legacy &ldquo;Rust&rdquo; extension. <code>rust-analyzer</code> is the official, high-performance language server that provides real-time error checking, auto-completion, and code navigation.</p>
 </blockquote>
 <hr>
-<h2 id="step-4-install-git-for-windows">Step 4: Install Git for Windows<a hidden class="anchor" aria-hidden="true" href="#step-4-install-git-for-windows">#</a></h2>
+<h2 id="install-git-for-windows">Install Git for Windows<a hidden class="anchor" aria-hidden="true" href="#install-git-for-windows">#</a></h2>
 <p>The Rust ecosystem relies heavily on Git. Cargo (Rust&rsquo;s package manager) uses Git under the hood to fetch libraries, packages, and dependencies directly from GitHub.</p>
 <ol>
 <li>Download the installer from <a href="https://git-scm.com/"
@@ -212,7 +227,12 @@
 <h2 id="verifying-your-rust-setup">Verifying Your Rust Setup<a hidden class="anchor" aria-hidden="true" href="#verifying-your-rust-setup">#</a></h2>
 <p>With everything installed, let&rsquo;s verify that your system paths are updated and the Rust compiler is responsive. Open a fresh <strong>PowerShell</strong> or <strong>Command Prompt</strong> window and run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rustc --version
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>Now with everything working we are redy to move on to <a href="/posts/learningrust/learning_rust-cargo/"
+  
+  >
+  Cargo and the Anatomy of &ldquo;Hello, World&rdquo;
+</a>
+</p>
 
   </div>
 
