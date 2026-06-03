@@ -27,10 +27,13 @@
     <loc>http://localhost:1313/categories/programming/</loc>
     <lastmod>2026-06-03T18:00:00-04:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/programming/</loc>
+    <lastmod>2026-06-03T18:00:00-04:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/rust/</loc>
     <lastmod>2026-06-03T18:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rust-basics/</loc>
+    <loc>http://localhost:1313/tags/rust/</loc>
     <lastmod>2026-06-03T18:00:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/learningrust/learning_rust-vars/</loc>
@@ -40,9 +43,6 @@
     <lastmod>2026-06-03T18:00:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/software-development/</loc>
-    <lastmod>2026-06-03T18:00:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/systems-programming/</loc>
     <lastmod>2026-06-03T18:00:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
@@ -63,16 +63,10 @@
     <loc>http://localhost:1313/tags/hello-world/</loc>
     <lastmod>2026-06-02T19:00:00-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/rust/</loc>
-    <lastmod>2026-06-02T19:00:00-04:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/dev-environment/</loc>
     <lastmod>2026-05-21T19:17:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/learningrust/learning_rust-setup/</loc>
-    <lastmod>2026-05-21T19:17:00-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
     <lastmod>2026-05-21T19:17:00-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/rustup/</loc>

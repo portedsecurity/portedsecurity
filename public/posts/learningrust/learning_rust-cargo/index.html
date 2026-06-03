@@ -157,12 +157,9 @@
 </span></span></code></pre></div><p>Cargo just did a few things behind the scenes. It created a new directory called hello_world, set up a basic project structure, and even initialized a new Git repository automatically to track your version history.</p>
 <p>Navigate into your new project director</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd hello_world
-</span></span></code></pre></div><p>The Anatomy of a Rust Project
-If you open the hello_world folder in VS Code, you will see a clean, minimalist structure. Let&rsquo;s dissect exactly what Cargo generated for you.</p>
-<ol>
-<li>Cargo.toml
-This is your project&rsquo;s manifest file, written in the TOML (Tom&rsquo;s Obvious, Minimal Language) format. It looks like this:</li>
-</ol>
+</span></span></code></pre></div><h2 id="the-anatomy-of-a-rust-project">The Anatomy of a Rust Project<a hidden class="anchor" aria-hidden="true" href="#the-anatomy-of-a-rust-project">#</a></h2>
+<p>If you open the hello_world folder in VS Code, you will see a clean, minimalist structure. Let&rsquo;s dissect exactly what Cargo generated for you.</p>
+<p>Cargo.toml: This is your project&rsquo;s manifest file, written in the TOML (Tom&rsquo;s Obvious, Minimal Language) format. It looks like this:</p>
 <pre tabindex="0"><code class="language-Ini," data-lang="Ini,">[package]
 name = &#34;hello_world&#34;
 version = &#34;0.1.0&#34;
@@ -171,10 +168,7 @@ edition = &#34;2021&#34;
 [dependencies]
 </code></pre><p>[package]: This section defines the metadata Cargo needs to compile your program, the name, the version, and the Rust edition to use.</p>
 <p>[dependencies]: Right now, it&rsquo;s empty. In the future, when you need to pull in external code (like a library to generate random numbers or build a web server), you will list them here. Cargo will read this file, download the exact versions you need, and link them to your project automatically.</p>
-<ol start="2">
-<li>The src Directory
-Cargo expects all your source code to live inside the src folder. The top level of your project directory is strictly for configuration files, READMEs, and licensing information.</li>
-</ol>
+<p>The src Directory: Cargo expects all your source code to live inside the src folder. The top level of your project directory is strictly for configuration files, READMEs, and licensing information.</p>
 <p>Inside src, you will find a single file: main.rs.</p>
 <p>Dissecting main.rs
 Open src/main.rs. You will see the most famous four lines in programming:</p>
@@ -186,10 +180,8 @@ Open src/main.rs. You will see the most famous four lines in programming:</p>
 <p>println!: This prints text to the console, but it is not a function. The exclamation mark (!) signifies that println! is a macro. Macros in Rust are essentially code that writes other code. For now, just remember: if you see a !, you are calling a macro instead of a normal function.</p>
 <p>&ldquo;Hello, world!&rdquo;: This is a string literal, passed as an argument to println!.</p>
 <p>;: Rust is a statically typed, C-family language. Almost all statements must end with a semicolon, indicating that the expression is complete.</p>
-<ol start="3">
-<li>Compiling and Running
-You have the code. Now it is time to execute it.</li>
-</ol>
+<h2 id="compiling-and-running">Compiling and Running<a hidden class="anchor" aria-hidden="true" href="#compiling-and-running">#</a></h2>
+<p>You have the code. Now it is time to execute it.</p>
 <p>While you could use cargo build to compile the code and then manually run the executable file it creates, Cargo provides a shortcut that does both in one step.</p>
 <p>In your VS Code terminal, make sure you are inside the hello_world directory and type:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cargo run

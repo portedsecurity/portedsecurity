@@ -39,11 +39,11 @@ Navigate into your new project director
 cd hello_world
 ```
 
-The Anatomy of a Rust Project
+## The Anatomy of a Rust Project
+
 If you open the hello_world folder in VS Code, you will see a clean, minimalist structure. Let's dissect exactly what Cargo generated for you.
 
-1. Cargo.toml
-This is your project's manifest file, written in the TOML (Tom's Obvious, Minimal Language) format. It looks like this:
+Cargo.toml: This is your project's manifest file, written in the TOML (Tom's Obvious, Minimal Language) format. It looks like this:
 
 ```Ini, TOML
 [package]
@@ -58,8 +58,7 @@ edition = "2021"
 
 [dependencies]: Right now, it's empty. In the future, when you need to pull in external code (like a library to generate random numbers or build a web server), you will list them here. Cargo will read this file, download the exact versions you need, and link them to your project automatically.
 
-2. The src Directory
-Cargo expects all your source code to live inside the src folder. The top level of your project directory is strictly for configuration files, READMEs, and licensing information.
+The src Directory: Cargo expects all your source code to live inside the src folder. The top level of your project directory is strictly for configuration files, READMEs, and licensing information.
 
 Inside src, you will find a single file: main.rs.
 
@@ -80,7 +79,7 @@ println!: This prints text to the console, but it is not a function. The exclama
 
 ;: Rust is a statically typed, C-family language. Almost all statements must end with a semicolon, indicating that the expression is complete.
 
-3. Compiling and Running
+## Compiling and Running
 You have the code. Now it is time to execute it.
 
 While you could use cargo build to compile the code and then manually run the executable file it creates, Cargo provides a shortcut that does both in one step.

@@ -6,8 +6,15 @@
     <description>Recent content in Rust on Ported Security</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jun 2026 19:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 18:00:00 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Variables and Immutability</title>
+      <link>http://localhost:1313/posts/learningrust/learning_rust-vars/</link>
+      <pubDate>Wed, 03 Jun 2026 18:00:00 -0400</pubDate>
+      <guid>http://localhost:1313/posts/learningrust/learning_rust-vars/</guid>
+      <description>Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming.</description>
+    </item>
     <item>
       <title>Cargo and the Anatomy of &#34;Hello, World&#34;</title>
       <link>http://localhost:1313/posts/learningrust/learning_rust-cargo/</link>
