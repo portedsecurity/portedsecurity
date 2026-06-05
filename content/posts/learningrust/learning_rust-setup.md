@@ -1,5 +1,5 @@
 +++
-title = "Learning Rust, setting up your development enviroment"
+title = "Learning Rust, setting up your development environment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
 description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
@@ -9,11 +9,14 @@ series = ["Learning Rust"]
 author = "Gregory Bryant"
 meta_title = "How to Install Rust on Windows."
 focus_keyword = "install rust on windows"
+
 +++
+
+## Learning Rust, setting up your development environment
 
 To get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
 
-Because Rust interacts closely with the Windows operating system, it relies on Microsoft's C++ build tools behind the scenes. 
+Because **Rust** interacts closely with the Windows operating system, it relies on Microsoft's C++ build tools behind the scenes. 
 
 Here is the checklist to install Rust on a Windows machine.
 
@@ -28,21 +31,17 @@ To write, compile, and manage Rust applications on Windows, we need to install f
 3. **VS Code** (The code editor)
 4. **Git** (For version control and dependency management)
 
----
-
 ## Install Visual Studio Build Tools
 
 Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolchain. You do not need to install the massive, full Visual Studio IDE; you only need the command-line build tools.
 
-1. Head to the official [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/) page.
-2. Scroll down to *All Downloads*, expand *Tools for Visual Studio*, and download the **Build Tools for Visual Studio 2022**.
-3. Run the installer. In the workloads screen, check the box for **Desktop development with C++**.
-4. On the right-hand sidebar, ensure the following components are selected:
+- Head to the official [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/) page.
+- Scroll down to *All Downloads*, expand *Tools for Visual Studio*, and download the **Build Tools for Visual Studio 2022**.
+- Run the installer. In the workloads screen, check the box for **Desktop development with C++**.
+- On the right-hand sidebar, ensure the following components are selected:
    * **MSVC v143** - VS 2022 C++ x64/x86 build tools (or latest)
    * **Windows 11 SDK** (or Windows 10 SDK, matching your operating system)
-5. Click **Install** and reboot your PC if prompted.
-
----
+- Click **Install** and reboot your PC if prompted.
 
 ## Install Rust via Rustup
 
@@ -54,8 +53,6 @@ Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolch
 4. When prompted, type **`1`** and press **Enter** to proceed with the default installation.
 5. Close the terminal window once the installation completes.
 
----
-
 ## Configure VS Code and Rust-Analyzer
 
 While you can write Rust in any text editor, Visual Studio Code paired with the right extensions offers an unmatched developer experience.
@@ -66,8 +63,6 @@ While you can write Rust in any text editor, Visual Studio Code paired with the 
 
 > **Note:** Do not install the legacy "Rust" extension. `rust-analyzer` is the official, high-performance language server that provides real-time error checking, auto-completion, and code navigation.
 
----
-
 ## Install Git for Windows
 
 The Rust ecosystem relies heavily on Git. Cargo (Rust's package manager) uses Git under the hood to fetch libraries, packages, and dependencies directly from GitHub.
@@ -75,8 +70,6 @@ The Rust ecosystem relies heavily on Git. Cargo (Rust's package manager) uses Gi
 1. Download the installer from [git-scm.com](https://git-scm.com/).
 2. Run the installer. You can safely accept the default options. 
 3. Ensure that the option **"Git from the command line and also from 3rd-party software"** remains checked during setup.
-
----
 
 ## Verifying Your Rust Setup
 
@@ -90,10 +83,10 @@ rustc --version
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development enviroment]({{< relref "learning_rust-setup.md" >}})
+[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
 [Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
 [Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
----
+[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})

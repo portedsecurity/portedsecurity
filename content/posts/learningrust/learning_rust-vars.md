@@ -18,8 +18,6 @@ Rust takes a different, highly intentional approach. In Rust, variables are immu
 
 This might feel restrictive at first, but it is one of the foundational design choices that allows Rust to guarantee memory safety and thread safety without sacrificing speed. Let's explore how variables work in Rust, why immutability is the default, and how to safely bypass it when you need to.
 
----
-
 ### Initializing the Project
 Open up VS Code, open your Rust Projects folder, and open a new terminal. In the terminal type:
 
@@ -35,8 +33,6 @@ cd variables
 ```
 
 Open the src/main.rs file. This is where we will write all the code for this tutorial.
-
----
 
 ## The Default State: Locked Down
 Let's test Rust's default behavior. Replace the generated "Hello, world!" code in your src/main.rs file with the following:
@@ -67,17 +63,13 @@ fn main() {
 
 If you run cargo check or cargo run on this, the Rust compiler will stop you in your tracks with a highly descriptive error[E0384]: cannot assign twice to immutable variable.
 
----
-
 ## Why Does Rust Do This?
-Imagine you are building a complex, high-performance application—like a game engine or a remote streaming client. You have a variable tracking a user's unique connection ID. If a rogue function deep in your codebase accidentally modifies that ID, the application might silently drop the connection or crash entirely.
+Imagine you are building a complex, high performance application like a game engine or a remote streaming client. You have a variable tracking a user's unique connection ID. If a rogue function deep in your codebase accidentally modifies that ID, the application might silently drop the connection or crash entirely.
 
-By making variables immutable by default, Rust eliminates an entire category of bugs where data changes unpredictably. When you read a piece of Rust code and see a standard let binding, you have a compiler-backed guarantee that the value will never change unexpectedly
-
----
+By making variables immutable by default, Rust eliminates an entire category of bugs where data changes unpredictably. When you read a piece of Rust code and see a standard let binding, you have a compiler backed guarantee that the value will never change unexpectedly
 
 ## Breaking the Rules Safely: The mut Keyword
-Obviously, software needs to manipulate state. A game where a player's health points can never drop is not much of a game. When you need a variable to change, you must explicitly tell the compiler by adding the mut (mutable) keyword.
+Obviously, software needs to manipulate some variables. A game where a player's health points can never drop is not much of a game. When you need a variable to change, you must explicitly tell the compiler by adding the **mut** (mutable) keyword.
 
 Update your src/main.rs file to look like this:
 
@@ -104,15 +96,13 @@ Player health: 1000
 Player took damage! Health is now: 850
 ```
 
-By requiring mut, Rust forces you to communicate your intent. It acts as a clear signpost to anyone reading the code (including future you) that this specific piece of data is expected to change over time.
-
----
+By requiring **mut**, Rust forces you to communicate your intent. It acts as a clear sign to anyone reading the code that this specific piece of data is expected to change over time.
 
 ## Constants vs. Immutable Variables
 
-You might be wondering: If an immutable variable can't be changed, isn't it just a constant? Not quite. While they share similarities, Rust has a separate const keyword, and the two are handled differently under the hood:
+You might be wondering: If an immutable variable can't be changed, isn't it just a constant? Not quite. While they share similarities, Rust has a separate **const** keyword, and the two are handled differently under the hood:
 
-+ You cannot use mut with const. Constants are not just immutable by default; they are immutable always.
++ You cannot use **mut** with **const**. Constants are not just immutable by default; they are immutable always.
 + Type annotations are mandatory. You must explicitly state the data type (e.g., u32 for an unsigned 32-bit integer).
 + Evaluation time. Constants can only be set to a constant expression, not the result of a value computed at runtime.
 
@@ -142,8 +132,6 @@ Server capacity is locked at: 10000
 
 Constants are useful for hardcoded values that remain static throughout the entire lifecycle of your application, like a maximum frame rate or a physics gravity multiplier.
 
----
-
 ## The Art of Shadowing
 Rust offers a unique feature called shadowing, which allows you to declare a new variable with the same name as a previous variable.
 
@@ -168,11 +156,9 @@ fn main() {
 
 If you run cargo run, you will see that the inner scope prints 12, and the outer scope prints 6.
 
----
-
 ## Shadowing vs. Mutability
 
-Why use shadowing instead of just making the variable mut?
+Why use shadowing instead of just making the variable mutable?
 
 + Preserving Immutability: When you shadow a variable using let, you perform a transformation on the value, but the new variable remains immutable after the transformation is complete.
 + Changing Types: Shadowing allows you to reuse a variable name even if the data type changes.
@@ -186,17 +172,15 @@ let spaces = "   ";
 let spaces = spaces.len();
 ```
 
-If you tried to do this with mut, the compiler would throw an error because you are not allowed to mutate a variable's type, only its value.
-
----
+If you tried to do this with **mut**, the compiler would throw an error because you are not allowed to mutate a variable's type, only its value.
 
 ## Summary
 Understanding how Rust handles data is your first step toward mastering systems programming:
 
-+ let: Immutable by default. Safe, predictable, and prevents unwanted side effects.
-+ let mut: Explicit mutability. Signals that state will change.
-+ const: Hardcoded, strictly typed values known at compile time.
-+ Shadowing (let again): Transforms a value or changes its type while keeping the same name.
++ **let**: Immutable by default. Safe, predictable, and prevents unwanted side effects.
++ **let mut**: Explicit mutability. Signals that state will change.
++ **const**: Hardcoded, strictly typed values known at compile time.
++ Shadowing (**let** again): Transforms a value or changes its type while keeping the same name.
 
 Embrace the immutability default. It might take a little extra typing upfront, but it pays massive dividends by preventing logic bugs from ever making it to production.
 
@@ -204,10 +188,10 @@ Embrace the immutability default. It might take a little extra typing upfront, b
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development enviroment]({{< relref "learning_rust-setup.md" >}})
+[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
 [Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
 [Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
----
+[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
