@@ -11,7 +11,6 @@ meta_title = 'Rust Variables and Immutability'
 focus_keyword = "rust variables and immutability"
 +++
 
-## Rust Variables and the Immutability Default: Why Safe Code Matters
 If you are coming to Rust from languages like Python, JavaScript, or C++, you are used to variables acting exactly as their name implies: they vary. You declare a variable, assign it a value, and change that value whenever the program's logic dictates.
 
 Rust takes a different, highly intentional approach. In Rust, variables are immutable by default. Once a value is bound to a name, you cannot change it.

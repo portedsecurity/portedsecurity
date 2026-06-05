@@ -12,8 +12,6 @@ focus_keyword = "install rust on windows"
 
 +++
 
-## Learning Rust, setting up your development environment
-
 To get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
 
 Because **Rust** interacts closely with the Windows operating system, it relies on Microsoft's C++ build tools behind the scenes. 

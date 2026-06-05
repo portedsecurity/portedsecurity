@@ -12,8 +12,6 @@ focus_keyword = "Rust If, Else, and Loops"
 
 +++
 
-## Rust Control Flow: Making Decisions with If, Else, and Loops
-
 Programs are not just top-to-bottom lists of instructions. For software to be useful, it needs to react to data, make decisions, and repeat tasks. A game needs to keep running until the player quits. A server needs to respond differently to an admin than to a guest.
 
 The mechanisms that guide a program through these decisions are called **Control Flow**.

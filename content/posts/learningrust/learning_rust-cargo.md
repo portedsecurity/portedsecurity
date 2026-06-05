@@ -12,8 +12,6 @@ focus_keyword = "rust cargo"
 
 +++
 
-## Cargo and the Anatomy of "Hello, World
-
 Welcome to day one of writing Rust. You are stepping into a language that powers everything from massive web servers to the core utilities of operating systems.
 
 If following from our previous post, you are ready to dive right in. Otherwise, checkout [Setting up your development environment]({{< relref "learning_rust-setup.md" >}}). Let's start with a break down on how Rust projects are structured and get your first program off the ground.
