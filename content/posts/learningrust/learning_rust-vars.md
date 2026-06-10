@@ -194,3 +194,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
 [Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
+
+[Rust Ownership Explained: The Secret Weapon for Memory Safety]({{< relref "learning_rust-ownership.md" >}})
