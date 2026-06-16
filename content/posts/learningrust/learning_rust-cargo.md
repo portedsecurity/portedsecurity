@@ -1,5 +1,5 @@
 +++
-title = 'Cargo and the Anatomy of "Hello, World"'
+title = 'Rust: Cargo and the Anatomy of "Hello, World"'
 date = 2026-06-02T19:00:00-04:00
 draft = false
 description = "Dive into your first Rust program and Cargo file"
@@ -46,7 +46,7 @@ If you open the hello_world folder in VS Code, you will see a clean, minimalist 
 
 Cargo.toml: This is your project's manifest file, written in the TOML (Tom's Obvious, Minimal Language) format. It looks like this:
 
-```Ini, TOML
+```Ini,
 [package]
 name = "hello_world"
 version = "0.1.0"
@@ -70,6 +70,7 @@ fn main() {
     println!("Hello, world!");
 }
 ```
+
 It looks simple, but there are a few uniquely "Rust" details hiding in here:
 
 - **fn main()**: The fn keyword declares a function. The main function is special: it is the primary entry point of every executable Rust program. The code inside its curly braces {} is the very first thing that runs.
@@ -78,11 +79,13 @@ It looks simple, but there are a few uniquely "Rust" details hiding in here:
 - **;**: Rust is a statically typed, C-family language. Almost all statements must end with a semicolon, indicating that the expression is complete.
 
 ## Compiling and Running
+
 You have the code, now it's time to execute it.
 
 While you could use **cargo build** to compile the code and then manually run the executable file it creates, **Cargo** provides a shortcut that does both in one step.
 
 In your VS Code terminal, make sure you are inside the hello_world directory and type:
+
 ```bash
 cargo run
 ```
@@ -104,12 +107,14 @@ You have officially compiled and executed your first Rust program. You now have 
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
+[Rust: Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
-[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+[Rust: Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
-[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+[Rust: Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
-[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
+[Rust: Control Flow, Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
 
-[Rust Ownership Explained: The Secret Weapon for Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+[Rust: Ownership Explained, Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+
+[Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-ownership.md" >}})

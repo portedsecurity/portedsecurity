@@ -1,5 +1,5 @@
 +++
-title = "Rust Control Flow: Making Decisions with If, Else, and Loops"
+title = "Rust: Control Flow, Making Decisions with If, Else, and Loops"
 date = 2026-06-04T19:00:00-04:00
 draft = false
 description = "Master Rust control flow. Learn how to use if/else statements, the powerful 'loop' construct, while, and for loops to control program execution paths."
@@ -173,12 +173,14 @@ Control flow is what transforms a static script into an interactive application.
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
+[Rust: Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
-[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+[Rust: Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
-[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+[Rust: Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
-[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
+[Rust: Control Flow, Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
 
-[Rust Ownership Explained: The Secret Weapon for Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+[Rust: Ownership Explained, Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+
+[Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-ownership.md" >}})

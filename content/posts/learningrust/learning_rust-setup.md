@@ -1,5 +1,5 @@
 +++
-title = "Learning Rust, setting up your development environment"
+title = "Rust: Setting up your development environment"
 date = 2026-05-21T19:17:00-04:00
 draft = false
 description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
@@ -37,8 +37,8 @@ Rust on Windows typically defaults to the **MSVC (Microsoft Visual C++)** toolch
 - Scroll down to *All Downloads*, expand *Tools for Visual Studio*, and download the **Build Tools for Visual Studio 2022**.
 - Run the installer. In the workloads screen, check the box for **Desktop development with C++**.
 - On the right-hand sidebar, ensure the following components are selected:
-   * **MSVC v143** - VS 2022 C++ x64/x86 build tools (or latest)
-   * **Windows 11 SDK** (or Windows 10 SDK, matching your operating system)
+  * **MSVC v143** - VS 2022 C++ x64/x86 build tools (or latest)
+  * **Windows 11 SDK** (or Windows 10 SDK, matching your operating system)
 - Click **Install** and reboot your PC if prompted.
 
 ## Install Rust via Rustup
@@ -81,12 +81,14 @@ rustc --version
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
+[Rust: Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
-[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+[Rust: Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
-[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+[Rust: Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
-[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
+[Rust: Control Flow, Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
 
-[Rust Ownership Explained: The Secret Weapon for Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+[Rust: Ownership Explained, Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+
+[Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-ownership.md" >}})

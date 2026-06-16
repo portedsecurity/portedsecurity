@@ -1,5 +1,5 @@
 +++
-title = "Rust Variables and Immutability"
+title = "Rust: Variables and Immutability"
 date = 2026-06-03T18:00:00-04:00
 draft = false
 description = "Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming."
@@ -18,11 +18,13 @@ Rust takes a different, highly intentional approach. In Rust, variables are immu
 This might feel restrictive at first, but it is one of the foundational design choices that allows Rust to guarantee memory safety and thread safety without sacrificing speed. Let's explore how variables work in Rust, why immutability is the default, and how to safely bypass it when you need to.
 
 ### Initializing the Project
+
 Open up VS Code, open your Rust Projects folder, and open a new terminal. In the terminal type:
 
 ```bash
 cargo new variables
 ```
+
 This will create a new folder to use for testing out how variables and immuntailty work.
 
 Navigate into your newly created directory:
@@ -34,6 +36,7 @@ cd variables
 Open the src/main.rs file. This is where we will write all the code for this tutorial.
 
 ## The Default State: Locked Down
+
 Let's test Rust's default behavior. Replace the generated "Hello, world!" code in your src/main.rs file with the following:
 
 ```rust
@@ -42,18 +45,20 @@ fn main() {
     println!("The base damage is: {}", base_damage);
 }
 ```
+
 Now, try to compile and execute the program by running this command in your terminal:
 
 ```bash
 cargo run
 ```
+
 This compiles and runs perfectly. But what happens if we try to modify base_damage further down in the code?
 
 ```rust
 fn main() {
     let base_damage = 500;
     println!("The base damage is: {}", base_damage);
-    
+
     // Attempting to update the value
     base_damage = 600; 
     println!("The modified damage is: {}", base_damage);
@@ -63,11 +68,13 @@ fn main() {
 If you run cargo check or cargo run on this, the Rust compiler will stop you in your tracks with a highly descriptive error[E0384]: cannot assign twice to immutable variable.
 
 ## Why Does Rust Do This?
+
 Imagine you are building a complex, high performance application like a game engine or a remote streaming client. You have a variable tracking a user's unique connection ID. If a rogue function deep in your codebase accidentally modifies that ID, the application might silently drop the connection or crash entirely.
 
 By making variables immutable by default, Rust eliminates an entire category of bugs where data changes unpredictably. When you read a piece of Rust code and see a standard let binding, you have a compiler backed guarantee that the value will never change unexpectedly
 
 ## Breaking the Rules Safely: The mut Keyword
+
 Obviously, software needs to manipulate some variables. A game where a player's health points can never drop is not much of a game. When you need a variable to change, you must explicitly tell the compiler by adding the **mut** (mutable) keyword.
 
 Update your src/main.rs file to look like this:
@@ -76,7 +83,7 @@ Update your src/main.rs file to look like this:
 fn main() {
     let mut current_health = 1000;
     println!("Player health: {}", current_health);
-    
+
     // The player takes damage
     current_health = 850; 
     println!("Player took damage! Health is now: {}", current_health);
@@ -88,6 +95,7 @@ Run the code again:
 ```bash
 cargo run
 ```
+
 The Output:
 
 ```plaintext
@@ -117,6 +125,7 @@ fn main() {
     println!("Server capacity is locked at: {}", MAX_SERVER_CAPACITY);
 }
 ```
+
 Run the code again:
 
 ```bash
@@ -132,6 +141,7 @@ Server capacity is locked at: 10000
 Constants are useful for hardcoded values that remain static throughout the entire lifecycle of your application, like a maximum frame rate or a physics gravity multiplier.
 
 ## The Art of Shadowing
+
 Rust offers a unique feature called shadowing, which allows you to declare a new variable with the same name as a previous variable.
 
 Try running this final block of code in your main.rs file:
@@ -139,7 +149,7 @@ Try running this final block of code in your main.rs file:
 ```rust
 fn main() {
     let x = 5;
-    
+
     // We shadow the first 'x' by using 'let' again
     let x = x + 1; 
 
@@ -174,6 +184,7 @@ let spaces = spaces.len();
 If you tried to do this with **mut**, the compiler would throw an error because you are not allowed to mutate a variable's type, only its value.
 
 ## Summary
+
 Understanding how Rust handles data is your first step toward mastering systems programming:
 
 + **let**: Immutable by default. Safe, predictable, and prevents unwanted side effects.
@@ -187,12 +198,14 @@ Embrace the immutability default. It might take a little extra typing upfront, b
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
+[Rust: Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
-[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+[Rust: Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
-[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+[Rust: Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
-[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
+[Rust: Control Flow, Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
 
-[Rust Ownership Explained: The Secret Weapon for Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+[Rust: Ownership Explained, Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+
+[Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-ownership.md" >}})

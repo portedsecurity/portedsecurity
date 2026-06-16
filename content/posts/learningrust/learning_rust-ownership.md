@@ -1,5 +1,5 @@
 +++
-title = "Rust Ownership Explained: The Secret Weapon for Memory Safety"
+title = "Rust: Ownership Explained, Memory Safety"
 date = 2026-06-06T21:00:00-04:00
 draft = false
 description = "Discover Rust's defining feature: Ownership. Learn how Rust guarantees memory safety, prevents access violations, and eliminates the need for a garbage collector."
@@ -42,7 +42,7 @@ Look at this example:
 ```rust
 fn main() {
     let original_string = String::from("Hello, World!");
-    
+
     // We assign the value to a new variable
     let new_string = original_string;
 
@@ -104,7 +104,7 @@ Let's fix our broken code:
 ```rust
 fn main() {
     let original_string = String::from("Hello, World!");
-    
+
     // We pass a reference using '&' instead of moving the value
     let borrowed_string = &original_string;
 
@@ -150,12 +150,14 @@ Once you internalize the rules of Ownership and Borrowing, you will write code t
 
 Continue your journey with the next step or visit a previous post you may have missed
 
-[Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
+[Rust: Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
-[Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
+[Rust: Cargo and the Anatomy of "Hello, World"]({{< relref "learning_rust-cargo.md" >}})
 
-[Rust Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
+[Rust: Variables and Immutability]({{< relref "learning_rust-vars.md" >}})
 
-[Rust Control Flow: Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
+[Rust: Control Flow, Making Decisions with If, Else, and Loops]({{< relref "learning_rust-flow.md" >}})
 
-[Rust Ownership Explained: The Secret Weapon for Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+[Rust: Ownership Explained, Memory Safety]({{< relref "learning_rust-ownership.md" >}})
+
+[Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-ownership.md" >}})
