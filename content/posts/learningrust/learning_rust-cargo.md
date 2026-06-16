@@ -118,3 +118,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Ownership Explained, Memory Safety]({{< relref "learning_rust-ownership.md" >}})
 
 [Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-structs.md" >}})
+
+[Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
