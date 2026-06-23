@@ -166,3 +166,5 @@ Once you get comfortable with pattern matching, writing robust, bug-free logic f
 [Rust: Structs and Enums, Modeling Custom Data]({{< relref "learning_rust-structs.md" >}})
 
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
+
+[Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
