@@ -1,5 +1,4 @@
 ---
-
 title: "Rust: Pattern Matching, Mastering the Match Operator"
 date: 2026-06-16
 draft: false
@@ -12,8 +11,6 @@ meta_title: "Rust: Pattern Matching, Mastering the Match Operator"
 focus_keyword: "Rust Pattern Matching"
 
 ---
-
-# Rust: Pattern Matching, Mastering the Match Operator
 
 In our previous post, we explored how to model custom data using Enums, allowing a value to be exactly one of several distinct variants. But once you have data locked inside an Enum, how do you extract it and make decisions based on it?
 

@@ -1,5 +1,4 @@
 ---
-
 title: "Rust: Error Handling, Ditching Exceptions for Result and Option"
 date: 2026-06-23
 draft: false
@@ -12,8 +11,6 @@ meta_title: "Rust: Error Handling, Ditching Exceptions for Result and Option"
 focus_keyword: "Rust: Error Handling"
 
 ---
-
-# Rust: Error Handling, Ditching Exceptions for Result and Option
 
 In many programming languages, errors are treated as an afterthought. If a file is missing or a network request fails, the language throws an "Exception," abruptly halting the normal flow of the program. If you forget to wrap that code in a `try/catch` block, your entire application crashes.
 

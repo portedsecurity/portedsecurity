@@ -11,8 +11,6 @@ meta_title: 'Rust Collections Mastering Vectors and Strings'
 focus_keyword: "Mastering Vectors and Strings"
 ---
 
-# Rust: Collections, Mastering Vectors and Strings
-
 So far in this series, we have worked with data types that have a fixed size known at compile time, like a `u32` integer or a boolean. These are fast and stored neatly on the "Stack."
 
 But what if you are building an application where you don't know how much data you will have until the program is actually running? If you are building a To-Do list, you don't know if the user will add 3 items or 300.

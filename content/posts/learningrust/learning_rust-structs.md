@@ -1,5 +1,4 @@
 ---
-
 title:  "Rust: Structs and Enums, Modeling Custom Data"
 date:  2026-06-15
 draft: false
@@ -13,7 +12,7 @@ focus_keyword: "Rust Structs and Enums: Modeling Custom Data"
 
 ---
 
-# Rust Structs and Enums: Modeling Custom Data
+# 
 
 So far, we have worked with primitive data types: integers, booleans, and strings. While these are the building blocks of software, they are rarely enough to model real-world concepts on their own.
 
