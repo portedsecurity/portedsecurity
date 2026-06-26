@@ -1,15 +1,17 @@
-+++
-title = "Rust: Structs and Enums, Modeling Custom Data"
-date = 2026-06-15T20:00:00-04:00
-draft = false
-description = "Learn how to model complex, real-world data in Rust using Structs and Enums. Group related fields, define strict variants, and attach behavior to your data."
-tags = ["Rust", "structs", "enums", "data modeling", "systems programming", "software development"]
-categories = ["Development", "Tutorials", "Rust", "Programming"]
-series = ["Learning Rust"]
-author = "Gregory Bryant"
-meta_title = 'Rust Structs and Enums: Modeling Custom Data'
-focus_keyword = "Rust Structs and Enums: Modeling Custom Data"
-+++
+---
+
+title:  "Rust: Structs and Enums, Modeling Custom Data"
+date:  2026-06-15
+draft: false
+description:  "Learn how to model complex, real-world data in Rust using Structs and Enums. Group related fields, define strict variants, and attach behavior to your data."
+tags: ["Rust", "structs", "enums", "data modeling", "systems programming", "software development"]
+categories: ["Development", "Tutorials", "Rust", "Programming"]
+series: ["Learning Rust"]
+author: "Gregory Bryant"
+meta_title: 'Rust Structs and Enums: Modeling Custom Data'
+focus_keyword: "Rust Structs and Enums: Modeling Custom Data"
+
+---
 
 # Rust Structs and Enums: Modeling Custom Data
 
@@ -222,3 +224,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

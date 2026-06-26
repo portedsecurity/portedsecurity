@@ -1,11 +1,11 @@
 ---
+
 title: "Rust: Error Handling, Ditching Exceptions for Result and Option"
 date: 2026-06-23
 draft: false
 description: "Learn how Rust handles errors gracefully without using exceptions or null values. Master the Option and Result enums to write crash-proof code."
 categories: ["Rust", "Programming"]
 tags: ["Rust basics", "error handling", "Result enum", "Option enum", "null safety", "software development"]
-
 series: ["Learning Rust"]
 author: "Gregory Bryant"
 meta_title: "Rust: Error Handling, Ditching Exceptions for Result and Option"
@@ -171,3 +171,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

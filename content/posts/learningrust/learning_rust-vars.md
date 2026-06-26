@@ -1,15 +1,17 @@
-+++
-title = "Rust: Variables and Immutability"
-date = 2026-06-03T18:00:00-04:00
-draft = false
-description = "Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming."
-tags = ["Rust", "variables", "immutability", "programming", "software development"]
-categories = ["Development", "Tutorials", "Rust", "Programming"]
-series = ["Learning Rust"]
-author = "Gregory Bryant"
-meta_title = 'Rust Variables and Immutability'
-focus_keyword = "rust variables and immutability"
-+++
+---
+
+title: "Rust: Variables and Immutability"
+date: 2026-06-03
+draft: false
+description: "Learn how Rust handles variables, why immutability is the default, and how using the mut keyword and shadowing can lead to safer, faster systems programming."
+tags: ["Rust", "variables", "immutability", "programming", "software development"]
+categories: ["Development", "Tutorials", "Rust", "Programming"]
+series: ["Learning Rust"]
+author: "Gregory Bryant"
+meta_title: 'Rust Variables and Immutability'
+focus_keyword: "rust variables and immutability"
+
+---
 
 If you are coming to Rust from languages like Python, JavaScript, or C++, you are used to variables acting exactly as their name implies: they vary. You declare a variable, assign it a value, and change that value whenever the program's logic dictates.
 
@@ -213,3 +215,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

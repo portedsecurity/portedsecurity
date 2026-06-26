@@ -1,16 +1,17 @@
-+++
-title = "Rust: Setting up your development environment"
-date = 2026-05-21T19:17:00-04:00
-draft = false
-description = "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
-tags = ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment", "software development"]
-categories = ["Development", "Tutorials", "Rust", "Programming"]
-series = ["Learning Rust"]
-author = "Gregory Bryant"
-meta_title = "How to Install Rust on Windows."
-focus_keyword = "install rust on windows"
+---
 
-+++
+title: "Rust: Setting up your development environment"
+date: 2026-05-21
+draft: false
+description:  "Guide to installing Rust, MSVC build tools, VS Code, and Git on Windows."
+tags:  ["rust", "windows", "rustup", "vs-code", "programming", "dev-environment", "software development"]
+categories:  ["Development", "Tutorials", "Rust", "Programming"]
+series:  ["Learning Rust"]
+author:  "Gregory Bryant"
+meta_title:  "How to Install Rust on Windows."
+focus_keyword:  "install rust on windows"
+
+---
 
 To get into Windows application programming with **Rust**, you need a few core dependencies before you can start compiling code. 
 
@@ -96,3 +97,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

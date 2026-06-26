@@ -1,16 +1,17 @@
-+++
-title = "Rust: Control Flow, Making Decisions with If, Else, and Loops"
-date = 2026-06-04T19:00:00-04:00
-draft = false
-description = "Master Rust control flow. Learn how to use if/else statements, the powerful 'loop' construct, while, and for loops to control program execution paths."
-tags = ["Rust", "programming", "software development", "control flow", "loops", "if else"]
-categories = ["Development", "Tutorials", "Rust", "Programming"]
-series = ["Learning Rust"]
-author = "Gregory Bryant"
-meta_title = "Rust If, Else, and Loops"
-focus_keyword = "Rust If, Else, and Loops"
+---
 
-+++
+title: "Rust: Control Flow, Making Decisions with If, Else, and Loops"
+date: 2026-06-04
+draft: false
+description: "Master Rust control flow. Learn how to use if/else statements, the powerful 'loop' construct, while, and for loops to control program execution paths."
+tags: ["Rust", "programming", "software development", "control flow", "loops", "if else"]
+categories: ["Development", "Tutorials", "Rust", "Programming"]
+series: ["Learning Rust"]
+author: "Gregory Bryant"
+meta_title: "Rust If, Else, and Loops"
+focus_keyword: "Rust If, Else, and Loops"
+
+---
 
 Programs are not just top-to-bottom lists of instructions. For software to be useful, it needs to react to data, make decisions, and repeat tasks. A game needs to keep running until the player quits. A server needs to respond differently to an admin than to a guest.
 
@@ -188,3 +189,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

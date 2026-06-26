@@ -1,16 +1,17 @@
-+++
-title = 'Rust: Cargo and the Anatomy of "Hello, World"'
-date = 2026-06-02T19:00:00-04:00
-draft = false
-description = "Dive into your first Rust program and Cargo file"
-tags = ["rust", "cargo", "hello world", "programming", "software development"]
-categories = ["Development", "Tutorials", "Rust", "Programming"]
-series = ["Learning Rust"]
-author = "Gregory Bryant"
-meta_title = 'Cargo and the Anatomy of "Hello, World"'
-focus_keyword = "rust cargo"
+---
 
-+++
+title: 'Rust: Cargo and the Anatomy of "Hello, World"'
+date: 2026-06-02
+draft: false
+description: "Dive into your first Rust program and Cargo file"
+tags: ["rust", "cargo", "hello world", "programming", "software development"]
+categories: ["Development", "Tutorials", "Rust", "Programming"]
+series: ["Learning Rust"]
+author: "Gregory Bryant"
+meta_title: 'Cargo and the Anatomy of "Hello, World"'
+focus_keyword: "rust cargo"
+
+---
 
 Welcome to day one of writing Rust. You are stepping into a language that powers everything from massive web servers to the core utilities of operating systems.
 
@@ -122,3 +123,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

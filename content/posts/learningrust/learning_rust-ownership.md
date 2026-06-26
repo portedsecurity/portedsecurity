@@ -1,15 +1,17 @@
-+++
-title = "Rust: Ownership Explained, Memory Safety"
-date = 2026-06-06T21:00:00-04:00
-draft = false
-description = "Discover Rust's defining feature: Ownership. Learn how Rust guarantees memory safety, prevents access violations, and eliminates the need for a garbage collector."
-tags = ["Rust", "programming", "software development", "ownership", "borrow checker", "memory management", "systems programming"]
-categories = ["Development", "Tutorials", "Rust", "Programming"]
-series = ["Learning Rust"]
-author = "Gregory Bryant"
-meta_title = "Rust Ownership Explained"
-focus_keyword = "Rust Ownership Explained"
-+++
+---
+
+title: "Rust: Ownership Explained, Memory Safety"
+date: 2026-06-06
+draft: false
+description: "Discover Rust's defining feature: Ownership. Learn how Rust guarantees memory safety, prevents access violations, and eliminates the need for a garbage collector."
+tags: ["Rust", "programming", "software development", "ownership", "borrow checker", "memory management", "systems programming"]
+categories: ["Development", "Tutorials", "Rust", "Programming"]
+series: ["Learning Rust"]
+author: "Gregory Bryant"
+meta_title: "Rust Ownership Explained"
+focus_keyword: "Rust Ownership Explained"
+
+---
 
 # Rust Ownership Explained: The Secret Weapon for Memory Safety
 
@@ -165,3 +167,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})

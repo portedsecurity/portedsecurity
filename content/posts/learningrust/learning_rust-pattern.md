@@ -1,4 +1,5 @@
 ---
+
 title: "Rust: Pattern Matching, Mastering the Match Operator"
 date: 2026-06-16
 draft: false
@@ -168,3 +169,5 @@ Once you get comfortable with pattern matching, writing robust, bug-free logic f
 [Rust: Pattern Matching, Mastering the Match Operator]({{< relref "learning_rust-pattern.md" >}})
 
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
+
+[Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})
