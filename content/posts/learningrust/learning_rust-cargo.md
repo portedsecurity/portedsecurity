@@ -1,5 +1,4 @@
 ---
-
 title: 'Rust: Cargo and the Anatomy of "Hello, World"'
 date: 2026-06-02
 draft: false
@@ -125,3 +124,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Error Handling, Ditching Exceptions for Result and Option]({{< relref "learning_rust-error.md" >}})
 
 [Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})
+
+[Rust: Modules and Traits, Organizing Code and Shared Behavior]({{< relref "learning_rust-modules.md" >}})
