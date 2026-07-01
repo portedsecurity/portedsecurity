@@ -1,6 +1,6 @@
 ---
 title: "Rust: Ownership Explained, Memory Safety"
-date: 2026-06-06
+date: 2026-06-09
 draft: false
 description: "Discover Rust's defining feature: Ownership. Learn how Rust guarantees memory safety, prevents access violations, and eliminates the need for a garbage collector."
 tags: ["Rust", "programming", "software development", "ownership", "borrow checker", "memory management", "systems programming"]
@@ -168,3 +168,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})
 
 [Rust: Modules and Traits, Organizing Code and Shared Behavior]({{< relref "learning_rust-modules.md" >}})
+
+[Rust: CLI Tutorial, Building Your First Command Line Tool]({{< relref "learning_rust-cli.md" >}})

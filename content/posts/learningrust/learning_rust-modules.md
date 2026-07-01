@@ -1,6 +1,6 @@
 ---
 title: "Rust: Modules and Traits, Organizing Code and Shared Behavior"
-date: 2026-06-10
+date: 2026-06-29
 draft: false
 description: "Stop writing massive single-file programs. Learn how to organize your Rust code using modules, manage visibility with 'pub', and share behavior using Traits."
 categories: ["Rust", "Programming"]
@@ -72,7 +72,7 @@ mod logger;
 
 fn main() {
     println!("Starting the server...");
-    
+
     // We use the double colon (::) to access functions inside the module
     logger::log_warning("Disk space is running low.");
 }
@@ -184,7 +184,7 @@ fn print_to_dashboard(item: &impl Summary) {
 
 fn main() {
     println!("Starting the server...\n");
-    
+
     // Using our external module
     logger::log_warning("Disk space is running low.\n");
 
@@ -247,3 +247,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})
 
 [Rust: Modules and Traits, Organizing Code and Shared Behavior]({{< relref "learning_rust-modules.md" >}})
+
+[Rust: CLI Tutorial, Building Your First Command Line Tool]({{< relref "learning_rust-cli.md" >}})

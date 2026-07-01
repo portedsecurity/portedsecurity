@@ -1,5 +1,4 @@
 ---
-
 title: "Rust: Setting up your development environment"
 date: 2026-05-21
 draft: false
@@ -80,7 +79,7 @@ rustc --version
 
 ## Learning Rust
 
-Continue your journey with the next step or visit a previous post you may have missed
+Continue your journey with the next step orump ahead to for a refreher
 
 [Rust: Setting up your development environment]({{< relref "learning_rust-setup.md" >}})
 
@@ -101,3 +100,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})
 
 [Rust: Modules and Traits, Organizing Code and Shared Behavior]({{< relref "learning_rust-modules.md" >}})
+
+[Rust: CLI Tutorial, Building Your First Command Line Tool]({{< relref "learning_rust-cli.md" >}})

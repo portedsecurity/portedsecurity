@@ -227,3 +227,5 @@ Continue your journey with the next step or visit a previous post you may have m
 [Rust: Collections, Mastering Vectors and Strings]({{< relref "learning_rust-collections.md" >}})
 
 [Rust: Modules and Traits, Organizing Code and Shared Behavior]({{< relref "learning_rust-modules.md" >}})
+
+[Rust: CLI Tutorial, Building Your First Command Line Tool]({{< relref "learning_rust-cli.md" >}})
